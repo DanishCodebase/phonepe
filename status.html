@@ -1,0 +1,25 @@
+<!-- Redirect Page -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redirecting...</title>
+</head>
+<body>
+    <h1>Redirecting...</h1>
+    <script>
+        // Extract parameters from the URL
+        const params = new URLSearchParams(window.location.search);
+        const paymentStatus = params.get('status');
+
+        // Redirect based on the payment status parameter
+        if (paymentStatus === 'success') {
+            window.location.href = 'paymentstatussuccess.html';
+        } else if (paymentStatus === 'fail') {
+            window.location.href = 'paymentstatusfail.html';
+        } else {
+            // Redirect to a generic error page if no status is provided
+            window.location.href = 'status.html';
+        }
+    </script>
+</body>
+</html>
